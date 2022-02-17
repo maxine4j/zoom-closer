@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Zoom Auto Closer",
-  "version": "1.0",
+  "version": "1.0.1",
   "background": {
     "service_worker": "service-worker.js"
   },
