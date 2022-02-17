@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Build and Upload Extension
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+    - name: Build Extension
+      run: yarn build
+    - name: Upload Extension
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./dist/zoom-closer.crx
+        asset_name: zoom-closer.crx
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "Simple chrome extension to automatically close those annoying zoom meeting invite tabs after joining a meeting."

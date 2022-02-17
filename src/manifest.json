@@ -3,7 +3,7 @@
   "name": "Zoom Auto Closer",
   "version": "1.0",
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "service-worker.js"
   },
   "permissions": ["tabs"]
 }
