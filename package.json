@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "yarn crx pack ./src --crx-version 3 -o ./dist/zoom-closer.crx"
+    "build": "mkdir ./dist/; yarn crx pack ./src --crx-version 3 -o ./dist/zoom-closer.crx"
   },
   "devDependencies": {
     "crx": "5.0.1"
